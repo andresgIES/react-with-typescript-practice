@@ -14,6 +14,22 @@ export default function Detail() {
     <div>
       <p onClick={goBack}> atras</p>
       <h1>hola detail {params.id} </h1>
+
+      <h1>
+        {' '}
+        {character
+          ? character.map((c) => (
+              <div key={c.id}>
+                <p> {c.name} </p>
+                <p> {c.description} </p>
+                <img
+                  src={c.thumbnail.path + c.thumbnail.extension}
+                  alt="imagen"
+                />
+              </div>
+            ))
+          : 'NO hay datos'}{' '}
+      </h1>
     </div>
   );
 }

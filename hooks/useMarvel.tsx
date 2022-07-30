@@ -3,7 +3,7 @@ import { Result } from '../models/character.model';
 
 export default function useMarvel(id: string) {
   const [characters, setCharacters] = useState<Result[]>([]);
-  const [character, setCharacter] = useState<Result>();
+  const [character, setCharacter] = useState<Result[]>([]);
 
   const getAllChacters = () => {
     const url =
@@ -14,7 +14,7 @@ export default function useMarvel(id: string) {
       .then((data) => setCharacters(data.data.results));
   };
 
-  const getOneChacter = (id: number) => {
+  const getOneChacter = (id: string) => {
     const url = `https://gateway.marvel.com:443/v1/public/characters/${id}?&apikey=3de3aab2bd3785577125d62fd8940dfe&hash=c27df0548798891baae588f1111f2577&ts=1`;
 
     fetch(url)
