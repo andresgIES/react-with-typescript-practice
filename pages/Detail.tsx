@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import useNavigation from '../hooks/navigation';
 import useMarvel from '../hooks/useMarvel';
+import useNavigation from '../hooks/useNavigation';
 import MapComic from '../_common/MapComic';
 
 export default function Detail() {
