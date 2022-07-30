@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useParams } from 'react-router-dom';
 import useNavigation from '../hooks/navigation';
 import useMarvel from '../hooks/useMarvel';
+import MapComic from '../_common/MapComic';
 
 export default function Detail() {
   let params = useParams();
@@ -19,6 +20,10 @@ export default function Detail() {
               <div key={c.id}>
                 <p> {c.name} </p>
                 <p> {c.description ? c.description : 'Sin descripcion'} </p>
+                <p>
+                  {'COMICS: '}
+                  <MapComic comics={c.comics.items} />
+                </p>
                 <img
                   width="300px"
                   src={`${c.thumbnail.path}.${c.thumbnail.extension}`}
