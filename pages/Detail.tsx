@@ -13,7 +13,6 @@ export default function Detail() {
   return (
     <div>
       <p onClick={goBack}> atras</p>
-      <h1>hola detail {params.id} </h1>
 
       <h1>
         {' '}
@@ -21,9 +20,10 @@ export default function Detail() {
           ? character.map((c) => (
               <div key={c.id}>
                 <p> {c.name} </p>
-                <p> {c.description} </p>
+                <p> {c.description ? c.description : 'Sin descripcion'} </p>
                 <img
-                  src={c.thumbnail.path + c.thumbnail.extension}
+                  width="300px"
+                  src={`${c.thumbnail.path}.${c.thumbnail.extension}`}
                   alt="imagen"
                 />
               </div>
