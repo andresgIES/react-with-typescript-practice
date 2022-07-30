@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import useNavigation from '../hooks/navigation';
 import useMarvel from '../hooks/useMarvel';
 
 export default function Detail() {
   let params = useParams();
-  let navigate = useNavigate();
   const { character } = useMarvel(params.id);
-  const goBack = () => {
-    navigate(-1);
-  };
+  const { goBack } = useNavigation();
 
   return (
     <div>
-      <p onClick={goBack}> atras</p>
+      <button onClick={goBack}> atras</button>
 
       <h1>
         {' '}
