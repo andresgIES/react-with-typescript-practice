@@ -7,7 +7,12 @@ export default function Home() {
   return (
     <div>
       <h1>hola home</h1>
-      <Link to="/detail/123">detalles</Link>
+
+      {characters.map((c) => (
+        <Link key={c.id} to={'/detail/' + c.id}>
+          <h1> {c.name} </h1>
+        </Link>
+      ))}
     </div>
   );
 }
